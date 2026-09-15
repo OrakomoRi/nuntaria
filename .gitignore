@@ -1,0 +1,15 @@
+node_modules/
+dist/
+*.tsbuildinfo
+*.tgz
+coverage/
+test-results/
+__screenshots__/
+.vitest-attachments/
+
+# Local working files
+CLAUDE.md
+CLAUDE.local.md
+notes/
+.claude/
+/local/
