@@ -2,11 +2,6 @@ import { afterEach, describe, expect, it } from 'vitest';
 import { addStyles, closeAll, show, toast } from '../src/index.js';
 import { animationsSettled, firstInStage, opened, stageEmpty, stageHost } from './helpers.js';
 
-function webkitKeepsStaleRootSize(): boolean {
-	const agent = navigator.userAgent;
-	return agent.includes('Safari') && !agent.includes('Chrome') && !agent.includes('Chromium');
-}
-
 afterEach(async () => {
 	closeAll();
 	await stageEmpty();
@@ -61,15 +56,14 @@ describe('isolation', () => {
 		}
 	});
 
-	it.skipIf(webkitKeepsStaleRootSize())('follows the root font size only within its own bounds', async () => {
+	it('ignores the page root font size', async () => {
 		const measure = async (rootSize: string): Promise<void> => {
 			document.documentElement.style.fontSize = rootSize;
-			const rem = Number.parseFloat(getComputedStyle(document.documentElement).fontSize);
-			const notice = show({ title: 'Scaled' });
+			const notice = show({ title: 'Untouched' });
 			await opened();
 
 			const size = Number.parseFloat(getComputedStyle(firstInStage('.nu-title')).fontSize);
-			expect(size, `root font size ${rootSize} resolved to ${rem}px`).toBeCloseTo(1.14 * Math.min(20, Math.max(14, rem)), 1);
+			expect(size, `root font size ${rootSize} changed the title`).toBeCloseTo(18.24, 1);
 
 			notice.close();
 			await notice;

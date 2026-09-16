@@ -4,7 +4,7 @@
 }
 
 .nu-root {
-	--nu-base: clamp(14px, 1rem, 20px);
+	--nu-base: clamp(14px, 1em, 20px);
 	--nu-unit: var(--nu-base);
 
 	--nu-info: #818cf8;
@@ -42,7 +42,7 @@
 	--nu-glass-field-border: rgba(255, 255, 255, 0.2);
 
 	--nu-backdrop: rgba(0, 0, 0, 0.65);
-	--nu-backdrop-blur: 0.375rem;
+	--nu-backdrop-blur: calc(0.375 * var(--nu-unit));
 	--nu-radius: calc(0.5 * var(--nu-unit));
 	--nu-gap: calc(0.75 * var(--nu-unit));
 	--nu-offset: calc(1.25 * var(--nu-unit));
@@ -224,8 +224,8 @@
 	--nu-field-border: var(--nu-glass-field-border);
 	--nu-field-focus: rgba(255, 255, 255, 0.5);
 
-	-webkit-backdrop-filter: blur(0.5rem);
-	backdrop-filter: blur(0.5rem);
+	-webkit-backdrop-filter: blur(calc(0.5 * var(--nu-unit)));
+	backdrop-filter: blur(calc(0.5 * var(--nu-unit)));
 	color-scheme: dark;
 }
 
