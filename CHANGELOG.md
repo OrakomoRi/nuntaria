@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/OrakomoRi/nuntaria/compare/v1.0.0...v1.0.1) (2026-09-16)
+
+
+### Fixed
+
+* **styles:** stop --nu-unit from tracking the page's root font size ([f0a77e1](https://github.com/OrakomoRi/nuntaria/commit/f0a77e18d855da879fda2d65bbeec89c500b546d))
+
 ## 1.0.0 (2026-09-16)
 
 ### Added
