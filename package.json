@@ -1,6 +1,6 @@
 {
 	"name": "nuntaria",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Dialogs, confirmations, prompts and toasts rendered in an isolated shadow root",
 	"type": "module",
 	"types": "./dist/index.d.ts",
