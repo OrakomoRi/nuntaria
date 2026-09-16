@@ -58,7 +58,10 @@ describe('motion', () => {
 	});
 
 	it('fades out gradually instead of jumping', async () => {
-		const notice = show({ title: 'Fading' });
+		const notice = show({
+			title: 'Fading',
+			animation: { exit: { keyframes: [{ opacity: 1 }, { opacity: 0 }], options: { duration: 2000 } } },
+		});
 		await opened();
 		await animationsSettled();
 		const panel = firstInStage('.nu-panel');
